@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enes Parlak | Backend Architect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">ENES<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <p class="hero-pretitle">MIS STUDENT & BACKEND ENGINEER</p>
+            <h1 class="hero-main-title">Backend <span id="typewriter"></span></h1>
+            <p class="hero-desc">Architecting robust systems with .NET 8, Onion Architecture, and Enterprise Design Patterns.</p>
+
+            <div class="hero-btns">
+                <a href="#projects" class="btn-neon">View Projects</a>
+                <a href="cv.pdf" download class="btn-outline"><i class="fas fa-download"></i> Download CV</a>
+            </div>
+
+            <div class="github-stats glass-card">
+                <div class="stat-item">
+                    <i class="fas fa-code-branch"></i>
+                    <span id="repo-count">0</span>
+                    <p>Repositories</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <span id="follower-count">0</span>
+                    <p>Followers</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-chart-line" style="color: #2ea44f;"></i>
+                    <span id="contrib-count">0</span>
+                    <p>Contributions (Year)</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="about">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="glass-card glow-on-hover" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <span class="badge">MIS Student at EMU</span>
+                <p style="margin-top: 15px; color: var(--text-gray);">
+                    I am an MIS student specializing in <strong>C# and .NET 8</strong>. I build scalable, maintainable systems using <strong>Onion Architecture</strong>. My focus is on writing clean code that solves complex business problems efficiently.
+                </p>
+            </div>
+        </section>
+
+        <section id="expertise">
+            <h2 class="section-title">Technical <span>Expertise</span></h2>
+
+
+
+            <div class="work-grid">
+                <div class="glass-card glow-on-hover">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Enterprise Design</h3>
+                    <p style="color: var(--text-gray);">Layered architectures for robust separation of concerns.</p>
+                </div>
+                <div class="glass-card glow-on-hover">
+                    <i class="fas fa-dot-circle"></i>
+                    <h3>Onion Architecture</h3>
+                    <p style="color: var(--text-gray);">Domain-Driven Design (DDD) focus with a decoupled core.</p>
+                </div>
+                <div class="glass-card glow-on-hover">
+                    <i class="fas fa-rocket"></i>
+                    <h3>ASP.NET Core 8</h3>
+                    <p style="color: var(--text-gray);">High-performance REST APIs with the latest .NET features.</p>
+                </div>
+            </div>
+
+            <div class="tech-stack-wrapper">
+                <p style="color: var(--text-gray); margin-bottom: 20px;">Technologies & Tools</p>
+                <div class="tech-icons">
+                    <i class="fab fa-docker" title="Docker"></i>
+                    <i class="fas fa-database" title="SQL Server"></i>
+                    <i class="fas fa-project-diagram" title="RabbitMQ"></i>
+                    <i class="fas fa-network-wired" title="REST API"></i>
+                    <i class="fab fa-git-alt" title="Git"></i>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Featured <span>Projects</span></h2>
+            <div class="projects-grid">
+                <div class="project-card glow-on-hover">
+                    <div class="project-img-wrapper"><img src="https://i.hizliresim.com/836oxnm.png" alt="BookCar"></div>
+                    <div class="project-info">
+                        <span class="badge">Onion Architecture</span>
+                        <h3>BookCar API</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">Enterprise car rental system built with MediatR and CQRS patterns.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Enesp4rl4k/CarBook" target="_blank" class="btn-view-code"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glow-on-hover">
+                    <div class="project-img-wrapper"><img src="https://i.hizliresim.com/k6w7m2n.png" alt="AI Masterclass"></div>
+                    <div class="project-info">
+                        <span class="badge">AI Integration</span>
+                        <h3>AI Masterclass</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">Integrating LLMs and 20+ AI models into specialized backend services.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Enesp4rl4k" target="_blank" class="btn-view-code"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card glow-on-hover">
+                    <div class="project-img-wrapper"><img src="https://i.hizliresim.com/9l8x2z3.png" alt="Big Data"></div>
+                    <div class="project-info">
+                        <span class="badge">Data Analytics</span>
+                        <h3>Big Data Visualizer</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem;">Visualization and predictive modeling for complex datasets.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Enesp4rl4k" target="_blank" class="btn-view-code"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-container">
+                <div class="contact-card-space">
+                    <h2 style="font-size: 3rem;">Let's <span>Talk.</span></h2>
+                    <p style="margin-top: 20px; color: var(--text-gray);">Currently open to internship and junior backend roles.</p>
+                    <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;">
+
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <i class="fas fa-envelope" style="color: var(--accent-blue); width: 25px;"></i>
+                            <a href="mailto:eparlak996@gmail.com" class="contact-link">eparlak996@gmail.com</a>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <i class="fab fa-github" style="color: var(--accent-purple); width: 25px;"></i>
+                            <a href="https://github.com/Enesp4rl4k" target="_blank" class="contact-link">github.com/Enesp4rl4k</a>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <i class="fab fa-linkedin" style="color: #0077b5; width: 25px;"></i>
+                            <a href="https://www.linkedin.com/in/enes-parlak-032a33232/" target="_blank" class="contact-link">linkedin.com/in/enes-parlak</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="sphere glow-on-hover"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        const username = 'Enesp4rl4k';
+        const currentYear = new Date().getFullYear();
+
+        // 1. GITHUB REPO & FOLLOWER
+        fetch(`https://api.github.com/users/${username}`)
+            .then(res => res.json())
+            .then(data => {
+                if(data.public_repos) document.getElementById('repo-count').innerText = data.public_repos;
+                if(data.followers) document.getElementById('follower-count').innerText = data.followers;
+            })
+            .catch(err => console.log('GitHub API Error:', err));
+
+        // 2. GITHUB CONTRIBUTIONS (Yıllık Katkı)
+        fetch(`https://github-contributions-api.jogruber.de/v4/${username}`)
+            .then(res => res.json())
+            .then(data => {
+                // Bulunduğumuz yılın verisini çekiyoruz
+                const yearData = data.total[currentYear];
+                if (yearData) {
+                    document.getElementById('contrib-count').innerText = yearData;
+                    // Başlığı da dinamik yapalım (Örn: Contributions 2025)
+                    document.querySelector('#contrib-count + p').innerText = `Contributions (${currentYear})`;
+                }
+            })
+            .catch(err => console.log('Contribution API Error:', err));
+
+        // 3. TYPEWRITER EFFECT
+        const textElement = document.getElementById('typewriter');
+        const words = ["Engineer.", "Architect.", "Developer."];
+        let wordIndex = 0, charIndex = 0, isDeleting = false;
+
+        function type() {
+            const currentWord = words[wordIndex];
+            textElement.textContent = isDeleting ? currentWord.substring(0, charIndex - 1) : currentWord.substring(0, charIndex + 1);
+            charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
+            let typeSpeed = isDeleting ? 100 : 200;
+            if (!isDeleting && charIndex === currentWord.length) { isDeleting = true; typeSpeed = 2000; }
+            else if (isDeleting && charIndex === 0) { isDeleting = false; wordIndex = (wordIndex + 1) % words.length; typeSpeed = 500; }
+            setTimeout(type, typeSpeed);
+        }
+        type();
+
+        // 4. SCROLL ANIMATIONS
+        const sr = ScrollReveal({ origin: 'bottom', distance: '50px', duration: 1000, delay: 200 });
+        sr.reveal('.hero-section, .section-title, .glass-card, .project-card, .contact-card-space', { interval: 150 });
+        sr.reveal('.tech-icons i', { interval: 100, origin: 'bottom' });
+    </script>
+</body>
+</html>
