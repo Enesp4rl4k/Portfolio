@@ -1,18 +1,40 @@
 @model MyPortfolio.DAL.Entities.Feature
 
 <section id="hero" class="hero-section text-center py-5" data-aos="fade-up">
+    <!-- You can customize your pre-title here -->
+    <div class="hero-pretitle">MIS STUDENT & BACKEND DEVELOPER</div>
+
+    <!-- You can customize your main title here. The <span> tag applies the gradient color! -->
+    <h1 class="hero-main-title text-white">Backend <span>Engineer.</span></h1>
+
     @if (Model != null)
     {
-        <h1 class="display-4 fw-bold">Enes Parlak</h1>
-        <p class="lead text-muted mb-4">@Model.Description</p>
+        <p class="hero-desc">@Model.Description</p>
     }
     else
     {
-        <h1 class="display-4 fw-bold">Enes Parlak</h1>
-        <p class="lead text-muted mb-4">.NET Web Developer</p>
+        <p class="hero-desc">Architecting robust systems with .NET 8, Onion Architecture, and Enterprise Design Patterns.</p>
     }
     <div class="hero-btns mt-4">
-        <a href="#projects" class="btn btn-primary btn-lg rounded-pill px-4 py-2 me-3 shadow-sm">View Projects</a>
-        <a href="~/cv.pdf" class="btn btn-outline-secondary btn-lg rounded-pill px-4 py-2 shadow-sm" target="_blank">Download CV</a>
+        <a href="#projects" class="btn btn-neon px-4 py-2 me-3 shadow-sm">View Projects</a>
+        <a href="~/cv.pdf" class="btn btn-outline px-4 py-2 shadow-sm" target="_blank"><i class="fas fa-download me-2"></i>Download CV</a>
+    </div>
+
+    <div class="github-stats mt-5" data-aos="zoom-in" data-aos-delay="200">
+        <div class="stat-item">
+            <i class="fas fa-code-branch text-info"></i>
+            <span>3</span>
+            <p>Repositories</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-users text-primary"></i>
+            <span>0</span>
+            <p>Followers</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-chart-line text-success"></i>
+            <span>10</span>
+            <p>Contributions (2026)</p>
+        </div>
     </div>
 </section>

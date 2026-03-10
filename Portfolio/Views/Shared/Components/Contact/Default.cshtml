@@ -68,23 +68,30 @@
 
                 <form action="/Contact/SendMessage" method="post">
                     <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label fw-semibold">Name & Surname</label>
-                            <input type="text" name="Namesurname" class="form-control" placeholder="Your full name" required />
+                        <div class="col-md-6 mb-4">
+                            <div class="floating-group">
+                                <input type="text" name="Namesurname" class="floating-input" required />
+                                <label class="floating-label">Name & Surname</label>
+                            </div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label fw-semibold">Email Address</label>
-                            <input type="email" name="Email" class="form-control" placeholder="name@example.com" required />
+                        <div class="col-md-6 mb-4">
+                            <div class="floating-group">
+                                <input type="email" name="Email" class="floating-input" required />
+                                <label class="floating-label">Email Address</label>
+                            </div>
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold">Subject</label>
-                        <input type="text" name="Subject" class="form-control" placeholder="Subject of your message" required />
+                    
+                    <div class="floating-group mb-4">
+                        <input type="text" name="Subject" class="floating-input" required />
+                        <label class="floating-label">Subject</label>
                     </div>
-                    <div class="mb-4">
-                        <label class="form-label fw-semibold">Message</label>
-                        <textarea name="MessageDetail" class="form-control" rows="5" placeholder="Write your message here..." required></textarea>
+                    
+                    <div class="floating-group mb-4">
+                        <textarea name="MessageDetail" class="floating-input" rows="5" required></textarea>
+                        <label class="floating-label">Message</label>
                     </div>
+                    
                     <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold">Send Message <i class="fas fa-paper-plane ms-2"></i></button>
                 </form>
             </div>
@@ -118,5 +125,53 @@
     .contact-info-card:hover .contact-icon {
         background-color: var(--accent-blue);
         color: white;
+    }
+
+    /* Floating Label CSS */
+    .floating-group {
+        position: relative;
+    }
+
+    .floating-input {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 1rem;
+        border: 2px solid var(--border-glass);
+        border-radius: 12px;
+        background: transparent;
+        color: var(--text-color);
+        outline: none;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .floating-input:focus {
+        border-color: var(--accent-purple);
+        box-shadow: 0 0 10px rgba(112, 0, 255, 0.2);
+    }
+
+    .floating-label {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        font-size: 1rem;
+        color: var(--text-gray);
+        pointer-events: none;
+        transition: 0.3s ease all;
+        background-color: var(--card-bg);
+        padding: 0 5px;
+        border-radius: 4px;
+    }
+
+    textarea.floating-input ~ .floating-label {
+        top: 25px;
+    }
+
+    .floating-input:focus ~ .floating-label,
+    .floating-input:valid ~ .floating-label {
+        top: 0;
+        font-size: 0.85rem;
+        color: var(--accent-blue);
+        font-weight: 600;
     }
 </style>
