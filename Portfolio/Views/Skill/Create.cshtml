@@ -1,0 +1,26 @@
+@model MyPortfolio.DAL.Entities.Skill
+
+@{
+    ViewData["Title"] = "Add Skill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mt-4">
+    <div class="card-header bg-success text-white">
+        <h4 class="mb-0">Add New Skill</h4>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Skill Title</label>
+                <input type="text" class="form-control" name="Title" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Proficiency Value (0-100)</label>
+                <input type="number" class="form-control" name="Value" min="0" max="100" required />
+            </div>
+            <button class="btn btn-success" type="submit">Save Skill</button>
+            <a href="/Skill/Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

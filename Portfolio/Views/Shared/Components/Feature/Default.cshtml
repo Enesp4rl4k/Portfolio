@@ -1,0 +1,18 @@
+@model MyPortfolio.DAL.Entities.Feature
+
+<section id="hero" class="hero-section text-center py-5" data-aos="fade-up">
+    @if (Model != null)
+    {
+        <h1 class="display-4 fw-bold">Enes Parlak</h1>
+        <p class="lead text-muted mb-4">@Model.Description</p>
+    }
+    else
+    {
+        <h1 class="display-4 fw-bold">Enes Parlak</h1>
+        <p class="lead text-muted mb-4">.NET Web Developer</p>
+    }
+    <div class="hero-btns mt-4">
+        <a href="#projects" class="btn btn-primary btn-lg rounded-pill px-4 py-2 me-3 shadow-sm">View Projects</a>
+        <a href="~/cv.pdf" class="btn btn-outline-secondary btn-lg rounded-pill px-4 py-2 shadow-sm" target="_blank">Download CV</a>
+    </div>
+</section>

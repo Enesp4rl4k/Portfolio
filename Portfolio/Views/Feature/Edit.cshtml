@@ -1,0 +1,23 @@
+@model MyPortfolio.DAL.Entities.Feature
+
+@{
+    ViewData["Title"] = "Edit Feature";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mt-4">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Edit Feature</h4>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <input type="hidden" name="FeatureId" value="@Model.FeatureId" />
+            <div class="mb-3">
+                <label class="form-label">Description (Hero Subtitle)</label>
+                <input type="text" class="form-control" name="Description" value="@Model.Description" required />
+            </div>
+            <button class="btn btn-primary" type="submit">Update Feature</button>
+            <a href="/Feature/Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

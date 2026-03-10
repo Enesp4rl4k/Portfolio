@@ -1,0 +1,82 @@
+@model List<MyPortfolio.DAL.Entities.Experience>
+
+<section id="experience" class="py-5 bg-light" data-aos="fade-up" data-aos-delay="100">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="fw-bold">My Experience</h2>
+                <div class="heading-line mx-auto"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <div class="timeline">
+                    @foreach (var exp in Model)
+                    {
+                        <div class="timeline-item shadow-sm">
+                            <div class="timeline-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4 class="text-primary fw-bold mb-1">@exp.Head</h4>
+                                <h6 class="text-muted fw-bold mb-2">@exp.Title</h6>
+                                <span class="badge bg-secondary mb-3"><i class="fas fa-calendar-alt me-1"></i> @exp.Date</span>
+                                <p>@exp.Description</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .timeline {
+        position: relative;
+        padding-left: 3rem;
+        margin-bottom: 2rem;
+    }
+    
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 15px;
+        height: 100%;
+        width: 3px;
+        background-color: var(--accent-purple);
+        border-radius: 3px;
+    }
+
+    .timeline-item {
+        position: relative;
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        padding: 25px;
+        margin-bottom: 30px;
+        transition: transform 0.3s ease;
+    }
+
+    .timeline-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .timeline-icon {
+        position: absolute;
+        top: 25px;
+        left: -3rem;
+        width: 40px;
+        height: 40px;
+        background-color: var(--accent-blue);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        box-shadow: 0 0 0 5px var(--bg-color);
+        z-index: 1;
+    }
+</style>

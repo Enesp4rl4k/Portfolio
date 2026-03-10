@@ -1,0 +1,47 @@
+@model List<MyPortfolio.DAL.Entities.Portfolio>
+
+@{
+    ViewData["Title"] = "Project List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mt-4">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        <h4 class="mb-0">My Projects</h4>
+        <a href="/Portfolio/Create" class="btn btn-sm btn-success">Add New Project</a>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Project URL</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.PortfolioId</td>
+                        <td>
+                            @if(!string.IsNullOrEmpty(item.ImageUrl)){
+                                <img src="@item.ImageUrl" alt="@item.Title" style="width: 50px; height: 50px; object-fit: cover;" class="rounded" />
+                            }
+                        </td>
+                        <td>@item.Title<br/><small class="text-muted">@item.Subtitle</small></td>
+                        <td>@(item.Description.Length > 50 ? item.Description.Substring(0, 50) + "..." : item.Description)</td>
+                        <td><a href="@item.ProjectUrl" target="_blank" class="btn btn-sm btn-outline-info">Link</a></td>
+                        <td>
+                            <a href="/Portfolio/Edit/@item.PortfolioId" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="/Portfolio/Delete/@item.PortfolioId" class="btn btn-sm btn-danger" onclick="return confirm('Delete this project?');">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

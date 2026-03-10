@@ -1,0 +1,64 @@
+@model MyPortfolio.DAL.Entities.About
+
+<section id="about" class="py-5" data-aos="fade-up" data-aos-delay="100">
+    <div class="row align-items-center mb-5">
+        <div class="col-12 text-center mb-4">
+            <h2 class="fw-bold">About Me</h2>
+            <div class="heading-line mx-auto"></div>
+        </div>
+        
+        @if (Model != null)
+        {
+            <div class="col-lg-5 mb-4 mb-lg-0 text-center">
+                <div class="about-image-wrapper">
+                    <img src="https://ui-avatars.com/api/?name=Enes+Parlak&size=300&background=0D8ABC&color=fff" alt="Profile Picture" class="img-fluid rounded-circle shadow-lg about-img" />
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <h3 class="fw-bold fs-2 text-primary mb-3">@Model.Title</h3>
+                <h4 class="fs-5 text-muted mb-4 fw-light">@Model.SubDescription</h4>
+                <div class="about-details">
+                    <p class="lead">@Model.Details</p>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-12 text-center">
+                <p class="text-muted">About Information not yet populated.</p>
+            </div>
+        }
+    </div>
+</section>
+
+<style>
+    .about-image-wrapper {
+        position: relative;
+        display: inline-block;
+    }
+    .about-image-wrapper::before {
+        content: '';
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        right: 15px;
+        bottom: 15px;
+        border: 3px solid var(--accent-purple);
+        border-radius: 50%;
+        z-index: -1;
+    }
+    .about-img {
+        border: 5px solid var(--card-bg);
+        transition: transform 0.3s ease;
+    }
+    .about-img:hover {
+        transform: scale(1.05);
+    }
+    .about-details {
+        background-color: var(--card-bg);
+        padding: 25px;
+        border-radius: 10px;
+        border-left: 4px solid var(--accent-blue);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+</style>

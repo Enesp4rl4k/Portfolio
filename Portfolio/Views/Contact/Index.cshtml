@@ -1,0 +1,43 @@
+@model List<MyPortfolio.DAL.Entities.Contact>
+
+@{
+    ViewData["Title"] = "Contact Info List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mt-4">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        <h4 class="mb-0">Contact Information Settings</h4>
+        @if (!Model.Any())
+        {
+            <a href="/Contact/Create" class="btn btn-sm btn-success">Add Core Contact Info</a>
+        }
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Email</th>
+                    <th>Phone 1</th>
+                    <th>Location</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Title</td>
+                        <td>@item.Email</td>
+                        <td>@item.Phone1</td>
+                        <td>@item.Address</td>
+                        <td>
+                            <a href="/Contact/Edit/@item.ContactId" class="btn btn-sm btn-primary">Edit</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

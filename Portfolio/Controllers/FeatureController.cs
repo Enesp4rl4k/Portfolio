@@ -1,0 +1,60 @@
+using Microsoft.AspNetCore.Mvc;
+using MyPortfolio.DAL.Context;
+using MyPortfolio.DAL.Entities;
+using System.Linq;
+
+namespace MyPortfolio.Controllers
+{
+    public class FeatureController : Controller
+    {
+        private readonly MyPortfolioContext context;
+
+        public FeatureController(MyPortfolioContext context)
+        {
+            this.context = context;
+        }
+
+        public IActionResult Index()
+        {
+            var values = context.Features.ToList();
+            return View(values);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Feature feature)
+        {
+            context.Features.Add(feature);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var value = context.Features.Find(id);
+            return View(value);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Feature feature)
+        {
+            context.Features.Update(feature);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var value = context.Features.Find(id);
+            context.Features.Remove(value);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+    }
+}

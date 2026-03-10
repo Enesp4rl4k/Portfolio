@@ -1,0 +1,43 @@
+@model MyPortfolio.DAL.Entities.Portfolio
+
+@{
+    ViewData["Title"] = "Edit Project";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mt-4">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Edit Project</h4>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <input type="hidden" name="PortfolioId" value="@Model.PortfolioId" />
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Title</label>
+                    <input type="text" class="form-control" name="Title" value="@Model.Title" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Subtitle (Category/Tech Span)</label>
+                    <input type="text" class="form-control" name="Subtitle" value="@Model.Subtitle" />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" name="Description" rows="4" required>@Model.Description</textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Image URL</label>
+                    <input type="text" class="form-control" name="ImageUrl" value="@Model.ImageUrl" />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Project/GitHub URL</label>
+                    <input type="text" class="form-control" name="ProjectUrl" value="@Model.ProjectUrl" />
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Update Project</button>
+            <a href="/Portfolio/Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

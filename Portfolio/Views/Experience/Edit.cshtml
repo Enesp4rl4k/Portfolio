@@ -1,0 +1,37 @@
+@model MyPortfolio.DAL.Entities.Experience
+
+@{
+    ViewData["Title"] = "Edit Experience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mt-4">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Edit Experience</h4>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <input type="hidden" name="ExperienceId" value="@Model.ExperienceId" />
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Role (Head)</label>
+                    <input type="text" class="form-control" name="Head" value="@Model.Head" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Company (Title)</label>
+                    <input type="text" class="form-control" name="Title" value="@Model.Title" required />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Date</label>
+                <input type="text" class="form-control" name="Date" value="@Model.Date" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" name="Description" rows="5" required>@Model.Description</textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Update Experience</button>
+            <a href="/Experience/Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

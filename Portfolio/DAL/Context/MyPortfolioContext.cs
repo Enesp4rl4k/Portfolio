@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MyPortfolio.DAL.Entities;
 using System.Collections.Generic;
 
@@ -7,9 +7,18 @@ namespace MyPortfolio.DAL.Context
 {
     public class MyPortfolioContext: DbContext
     {
+        public MyPortfolioContext() { }
+
+        public MyPortfolioContext(DbContextOptions<MyPortfolioContext> options) : base(options)
+        {
+        }
+
         override protected void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-4R4B9UI;initial Catalog=MyPortfoliDb;integrated Security=true;TrustserverCertificate=true");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Server=DESKTOP-4R4B9UI;initial Catalog=MyPortfoliDb;integrated Security=true;TrustserverCertificate=true");
+            }
         }
 
         public DbSet<About> Abouts { get; set; }
