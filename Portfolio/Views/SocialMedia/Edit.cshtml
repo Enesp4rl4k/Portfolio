@@ -1,0 +1,31 @@
+@model MyPortfolio.DAL.Entities.SocialMedia
+
+@{
+    ViewData["Title"] = "Edit Social Media";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mt-4">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Edit Social Media Account</h4>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <input type="hidden" name="SocialMediaId" value="@Model.SocialMediaId" />
+            <div class="mb-3">
+                <label class="form-label">Platform Name</label>
+                <input type="text" class="form-control" name="Title" value="@Model.Title" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Icon</label>
+                <input type="text" class="form-control" name="Icon" value="@Model.Icon" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">URL</label>
+                <input type="url" class="form-control" name="Url" value="@Model.Url" required />
+            </div>
+            <button class="btn btn-primary" type="submit">Update Account</button>
+            <a href="/SocialMedia/Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

@@ -13,13 +13,7 @@ namespace MyPortfolio.DAL.Context
         {
         }
 
-        override protected void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("Server=DESKTOP-4R4B9UI;initial Catalog=MyPortfoliDb;integrated Security=true;TrustserverCertificate=true");
-            }
-        }
+
 
         public DbSet<About> Abouts { get; set; }
         public DbSet<Contact> Contacts { get; set; }
@@ -31,5 +25,6 @@ namespace MyPortfolio.DAL.Context
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<Expertise> Expertises { get; set; }
     }
 }

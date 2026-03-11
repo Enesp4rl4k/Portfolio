@@ -25,18 +25,25 @@ namespace MyPortfolio.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(Admin admin)
         {
-            var value = _context.Admins.FirstOrDefault(x => x.Username == admin.Username && x.Password == admin.Password);
+            var value = _context.Admins.FirstOrDefault(x => x.Username == admin.Username);
             if (value != null)
             {
-                var claims = new List<Claim>
+                var hasher = new Microsoft.AspNetCore.Identity.PasswordHasher<Admin>();
+                var result = hasher.VerifyHashedPassword(value, value.Password, admin.Password);
+
+                if (result == Microsoft.AspNetCore.Identity.PasswordVerificationResult.Success)
                 {
-                    new Claim(ClaimTypes.Name, value.Username)
-                };
-                var useridentity = new ClaimsIdentity(claims, "Login");
-                var principal = new ClaimsPrincipal(useridentity);
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                return RedirectToAction("Index", "About");
+                    var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, value.Username)
+                    };
+                    var useridentity = new ClaimsIdentity(claims, "Login");
+                    var principal = new ClaimsPrincipal(useridentity);
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                    return RedirectToAction("Index", "About");
+                }
             }
+            ModelState.AddModelError("", "Invalid username or password");
             return View();
         }
 

@@ -1,0 +1,39 @@
+@model List<MyPortfolio.DAL.Entities.Testimonial>
+
+@{
+    ViewData["Title"] = "Testimonial List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mt-4">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        <h4 class="mb-0">Testimonials</h4>
+        <a href="/Testimonial/Create" class="btn btn-sm btn-success">Add New Testimonial</a>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.TestimonialId</td>
+                        <td>@item.NameSurname</td>
+                        <td>@item.Title</td>
+                        <td>
+                            <a href="/Testimonial/Edit/@item.TestimonialId" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="/Testimonial/Delete/@item.TestimonialId" class="btn btn-sm btn-danger" onclick="return confirm('Delete this testimonial?');">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

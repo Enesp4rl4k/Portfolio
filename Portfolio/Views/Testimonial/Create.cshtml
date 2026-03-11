@@ -1,0 +1,34 @@
+@model MyPortfolio.DAL.Entities.Testimonial
+
+@{
+    ViewData["Title"] = "Create Testimonial";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mt-4">
+    <div class="card-header bg-success text-white">
+        <h4 class="mb-0">Add New Testimonial</h4>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Client Name</label>
+                <input type="text" class="form-control" name="NameSurname" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Title/Position</label>
+                <input type="text" class="form-control" name="Title" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Image URL</label>
+                <input type="text" class="form-control" name="ImageUrl" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" name="Descriprion" rows="4" required></textarea>
+            </div>
+            <button class="btn btn-success" type="submit">Create Testimonial</button>
+            <a href="/Testimonial/Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

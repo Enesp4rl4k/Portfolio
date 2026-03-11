@@ -1,0 +1,31 @@
+@model MyPortfolio.DAL.Entities.Expertise
+
+@{
+    ViewData["Title"] = "Edit Expertise";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mt-4">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Edit Expertise Card</h4>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <input type="hidden" name="ExpertiseId" value="@Model.ExpertiseId" />
+            <div class="mb-3">
+                <label class="form-label">Title</label>
+                <input type="text" class="form-control" name="Title" value="@Model.Title" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Icon</label>
+                <input type="text" class="form-control" name="Icon" value="@Model.Icon" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" name="Description" rows="3" required>@Model.Description</textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Update Card</button>
+            <a href="/Expertise/Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

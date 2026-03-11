@@ -1,0 +1,35 @@
+@model MyPortfolio.DAL.Entities.Testimonial
+
+@{
+    ViewData["Title"] = "Edit Testimonial";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mt-4">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Edit Testimonial</h4>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <input type="hidden" name="TestimonialId" value="@Model.TestimonialId" />
+            <div class="mb-3">
+                <label class="form-label">Client Name</label>
+                <input type="text" class="form-control" name="NameSurname" value="@Model.NameSurname" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Title/Position</label>
+                <input type="text" class="form-control" name="Title" value="@Model.Title" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Image URL</label>
+                <input type="text" class="form-control" name="ImageUrl" value="@Model.ImageUrl" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea class="form-control" name="Descriprion" rows="4" required>@Model.Descriprion</textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Update Testimonial</button>
+            <a href="/Testimonial/Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

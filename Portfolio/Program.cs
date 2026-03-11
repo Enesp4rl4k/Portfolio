@@ -19,7 +19,7 @@ builder.Services.AddAuthentication(Microsoft.AspNetCore.Authentication.Cookies.C
     });
 
 var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION_STRING")
-    ?? "Host=localhost;Database=MyPortfoliDb;Username=postgres;Password=postgres";
+    ?? "Host=localhost;Database=MyPortfolioDb;Username=postgres;Password=postgres";
 
 builder.Services.AddDbContext<MyPortfolioContext>(options =>
     options.UseNpgsql(connectionString));
@@ -63,11 +63,13 @@ using (var scope = app.Services.CreateScope())
     var context = scope.ServiceProvider.GetRequiredService<MyPortfolioContext>();
     if (!context.Admins.Any())
     {
-        context.Admins.Add(new MyPortfolio.DAL.Entities.Admin
+        var hasher = new Microsoft.AspNetCore.Identity.PasswordHasher<MyPortfolio.DAL.Entities.Admin>();
+        var admin = new MyPortfolio.DAL.Entities.Admin
         {
             Username = "admin",
-            Password = "123"
-        });
+        };
+        admin.Password = hasher.HashPassword(admin, "123");
+        context.Admins.Add(admin);
         context.SaveChanges();
     }
 }

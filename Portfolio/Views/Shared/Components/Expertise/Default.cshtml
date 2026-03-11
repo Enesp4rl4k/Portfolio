@@ -3,32 +3,16 @@
         <h2 class="section-title">Technical <span>Expertise</span></h2>
         
         <div class="expertise-container">
-            <!-- Expertise Card 1 -->
-            <div class="expertise-card glass-card h-100">
-                <div class="expertise-icon">
-                    <i class="fas fa-layer-group text-info"></i>
+            @foreach (var item in Model)
+            {
+                <div class="expertise-card glass-card h-100">
+                    <div class="expertise-icon">
+                        <i class="@item.Icon text-info"></i>
+                    </div>
+                    <h3>@item.Title</h3>
+                    <p>@item.Description</p>
                 </div>
-                <h3>Enterprise Design</h3>
-                <p>Layered architectures for robust separation of concerns.</p>
-            </div>
-
-            <!-- Expertise Card 2 -->
-            <div class="expertise-card glass-card h-100">
-                <div class="expertise-icon">
-                    <i class="fas fa-bullseye text-info"></i>
-                </div>
-                <h3>Onion Architecture</h3>
-                <p>Domain-Driven Design (DDD) focus with a decoupled core.</p>
-            </div>
-
-            <!-- Expertise Card 3 -->
-            <div class="expertise-card glass-card h-100">
-                <div class="expertise-icon">
-                    <i class="fas fa-rocket text-info"></i>
-                </div>
-                <h3>ASP.NET Core 8</h3>
-                <p>High-performance REST APIs with the latest .NET features.</p>
-            </div>
+            }
         </div>
     </div>
 </section>
