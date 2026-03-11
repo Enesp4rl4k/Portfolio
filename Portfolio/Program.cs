@@ -5,8 +5,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION_STRING")
+    ?? "Server=DESKTOP-4R4B9UI;initial Catalog=MyPortfoliDb;integrated Security=true;TrustserverCertificate=true";
+
 builder.Services.AddDbContext<MyPortfolioContext>(options =>
-    options.UseSqlServer("Server=DESKTOP-4R4B9UI;initial Catalog=MyPortfoliDb;integrated Security=true;TrustserverCertificate=true"));
+    options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
