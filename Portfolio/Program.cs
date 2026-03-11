@@ -6,6 +6,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddAuthentication(Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Login/Index";
+        options.AccessDeniedPath = "/Login/Index";
+        options.ExpireTimeSpan = TimeSpan.FromDays(7);
+    });
+
 var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION_STRING")
     ?? "Host=localhost;Database=MyPortfoliDb;Username=postgres;Password=postgres";
 
@@ -23,16 +31,31 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
+
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
-
-app.UseStaticFiles();
 
     app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
+
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<MyPortfolioContext>();
+    if (!context.Admins.Any())
+    {
+        context.Admins.Add(new MyPortfolio.DAL.Entities.Admin
+        {
+            Username = "admin",
+            Password = "123"
+        });
+        context.SaveChanges();
+    }
+}
 
 app.Run();

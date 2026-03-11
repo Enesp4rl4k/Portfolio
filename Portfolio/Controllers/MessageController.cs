@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyPortfolio.DAL.Context;
 using System.Linq;
 
 namespace MyPortfolio.Controllers
 {
+    [Authorize]
     public class MessageController : Controller
     {
         private readonly MyPortfolioContext context;

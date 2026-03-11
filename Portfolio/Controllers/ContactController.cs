@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyPortfolio.DAL.Context;
 using MyPortfolio.DAL.Entities;
@@ -6,6 +7,7 @@ using System.Linq;
 
 namespace MyPortfolio.Controllers
 {
+    [Authorize]
     public class ContactController : Controller
     {
         private readonly MyPortfolioContext context;
