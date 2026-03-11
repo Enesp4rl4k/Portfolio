@@ -1,4 +1,4 @@
-﻿/* --- DEÐÝÞKENLER --- */
+/* --- DEÐÝÞKENLER --- */
 :root {
     --bg-color: #050505;
     --accent-purple: #7000ff;
@@ -380,7 +380,7 @@ section {
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 768px) {
+@media (max-width: 991.98px) {
     .hero-main-title {
         font-size: 2.8rem;
     }
@@ -391,7 +391,7 @@ section {
     }
 
     .nav-links {
-        display: none;
+        display: none !important;
     }
 
     .hero-btns {
@@ -514,6 +514,8 @@ body.light-theme {
     overflow: hidden;
     z-index: -1;
     pointer-events: none;
+    display: none;
+    opacity: 0.8;
 }
 .shape {
     position: absolute;
@@ -546,7 +548,7 @@ body.light-theme {
 
 .expertise-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     max-width: 1000px;
     margin: 0 auto;
