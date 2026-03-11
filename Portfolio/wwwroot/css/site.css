@@ -1,4 +1,4 @@
-/* --- DE–›ﬁKENLER --- */
+Ôªø/* --- DE√ê√ù√ûKENLER --- */
 :root {
     --bg-color: #050505;
     --accent-purple: #7000ff;
@@ -121,7 +121,8 @@ body {
 .hero-desc {
     color: var(--text-gray);
     max-width: 600px;
-    margin-bottom: 30px;
+    margin: 0 auto 30px auto;
+    text-align: center;
     font-size: 1.1rem;
 }
 
@@ -738,3 +739,4 @@ body.matrix-mode * {
     border-color: #0f0 !important;
     background-color: rgba(0, 20, 0, 0.4) !important;
 }
+
