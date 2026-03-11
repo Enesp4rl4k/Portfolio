@@ -7,10 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION_STRING")
-    ?? "Server=DESKTOP-4R4B9UI;initial Catalog=MyPortfoliDb;integrated Security=true;TrustserverCertificate=true";
+    ?? "Host=localhost;Database=MyPortfoliDb;Username=postgres;Password=postgres";
 
 builder.Services.AddDbContext<MyPortfolioContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseNpgsql(connectionString));
 
 var app = builder.Build();
 
